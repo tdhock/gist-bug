@@ -28,3 +28,23 @@ there is a new maximum of 40 files per gist (source: [[file:hit-api.R][hit-api.R
 11 80f411957fdf39f7e4e1    24       TRUE       TRUE 1006742  983.1465
 > 
 #+END_SRC
+
+*** Support request
+
+Dear Gist maintainers,
+
+First of all, thank you very much for this incredible free service for the open source community. I use gist + bl.ocks.org to host D3 data visualizations produced using my animint R package, https://github.com/tdhock/animint
+
+This week some of my data visualizations have stopped working, with a "File not found." error, e.g. http://bl.ocks.org/tdhock/raw/9414d390fd7647f9fc8a/
+
+I thought this was strange since (1) it was working last week, and (2) the gist is still available at
+
+https://gist.github.com/tdhock/9414d390fd7647f9fc8a
+
+I asked Mike Bostock (maintainer of bl.ocks.org) and he said that he returns the "File not found." page if the Gist API returns no file with a name of "index.html" or "README.md"
+
+After further investigation (https://github.com/tdhock/gist-bug) it seems like the problem is only occuring in gists which have more than 40 files. If the gist has less than 40 files, the Gist API lists all of the files (including index.html). But if the gist has more than 40 files, the index.html is not returned, so the bl.ocks.org page returns "File not found."
+
+In my opinion this is a bug, since I can no longer view my data visualizations that have more than 40 files on bl.ocks.org. Last week it seemed to be working fine. Is there any way you can revert the recent changes that you made?
+
+Thanks very much and have a nice day.
