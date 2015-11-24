@@ -1,0 +1,30 @@
+Why have my animints stopped rendering on bl.ocks.org?
+
+*** Problem
+
+e.g. http://bl.ocks.org/tdhock/raw/9414d390fd7647f9fc8a/ which I
+thought was strange since (1) it was working last week, and (2) the
+gist is still available at
+
+https://gist.github.com/tdhock/9414d390fd7647f9fc8a
+
+*** Investigation
+
+After examining the number of files in the table below, it seems like
+there is a new maximum of 40 files per gist (source: [[file:hit-api.R][hit-api.R]]).
+
+#+BEGIN_SRC R
+> animint.gists
+                     id files animint.js index.html   bytes kilobytes
+1  9414d390fd7647f9fc8a    40       TRUE      FALSE  994388  971.0820
+2  abe378a366dbd63acadf    39       TRUE       TRUE 1004637  981.0908
+3  c0a20d4990695f89bb87    35       TRUE       TRUE 1002217  978.7275
+4  2120199e9576d3628537    40       TRUE      FALSE 1006932  983.3320
+5  f24d410dd38e82a8eb70    40       TRUE      FALSE 1006878  983.2793
+6  8db1f75d2595e0a570f9    40       TRUE      FALSE  578532  564.9727
+8  e5b881395291477bb1b7    10       TRUE       TRUE  530999  518.5537
+9  42e6542721f81b639811    40       TRUE      FALSE  680198  664.2559
+10 aef616ba22fee33e82f5    15       TRUE       TRUE  601295  587.2021
+11 80f411957fdf39f7e4e1    24       TRUE       TRUE 1006742  983.1465
+> 
+#+END_SRC
